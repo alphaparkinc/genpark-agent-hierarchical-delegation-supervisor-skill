@@ -1,9 +1,9 @@
 """
-Hierarchical Supervisor-Worker Delegation and Aggregation Swarm.
+Hierarchical Delegation Supervisor-Worker Agent Swarm Orchestrator.
 Zero external dependencies, standard library only.
 """
 
-from typing import Dict, List, Any, Optional, Callable
+from typing import Dict, List, Any, Callable, Optional
 
 class HierarchicalSupervisorClient:
     """
@@ -29,7 +29,6 @@ class HierarchicalSupervisorClient:
         if "code" in overall_goal.lower() or "build" in overall_goal.lower():
             subtasks.append({"role": "Engineer", "instruction": f"Synthesize implementation code for: {overall_goal}"})
         if not subtasks:
-            # Default generic worker breakdown
             subtasks.append({"role": "Analyst", "instruction": f"Analyze: {overall_goal}"})
             subtasks.append({"role": "Writer", "instruction": f"Draft summary for: {overall_goal}"})
 
@@ -50,10 +49,8 @@ class HierarchicalSupervisorClient:
                 "output": output
             })
 
-        # Synthesize final output
         summary_lines = [f"- [{r['role']}]: {r['output']}" for r in worker_results]
-        final_synthesis = f"Supervisor Synthesis for '{overall_goal}':
-" + chr(10).join(summary_lines)
+        final_synthesis = f"Supervisor Synthesis for '{overall_goal}':" + chr(10) + chr(10).join(summary_lines)
 
         return {
             "goal": overall_goal,
