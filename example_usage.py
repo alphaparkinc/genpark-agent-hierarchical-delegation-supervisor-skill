@@ -17,8 +17,7 @@ def main():
     print("=== HIERARCHICAL SWARM EXECUTION REPORT ===")
     print("Goal:", report["goal"])
     print("Subtasks Executed:", report["subtasks_executed"])
-    print("
-" + report["final_synthesis"])
+    print(report["final_synthesis"])
 
 if __name__ == "__main__":
     main()
