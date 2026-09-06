@@ -1,0 +1,16 @@
+{
+  "name": "genpark-agent-hierarchical-delegation-supervisor-skill",
+  "version": "1.0.0",
+  "description": "Hierarchical supervisor-worker swarm coordinator, sub-task partitioner, and synthesized response aggregator.",
+  "author": "GenPark AI",
+  "license": "MIT",
+  "keywords": [
+    "supervisor",
+    "hierarchical",
+    "delegation",
+    "swarm",
+    "langgraph",
+    "genpark",
+    "mcp"
+  ]
+}
